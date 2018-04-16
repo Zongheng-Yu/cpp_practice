@@ -1,1 +1,1 @@
-add_library(exercise AddTwoNums.cpp)
+add_library(exercise twoSum.cpp)
