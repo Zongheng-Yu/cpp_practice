@@ -1,0 +1,1 @@
+add_library(exercise AddTwoNums.cpp)

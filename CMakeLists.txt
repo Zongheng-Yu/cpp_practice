@@ -1,0 +1,8 @@
+cmake_minimum_required (VERSION 2.6)
+project (gtest)
+if(CMAKE_COMPILER_IS_GNUCXX)
+    add_compile_options(-std=c++0x)
+    message(STATUS "optional:-std=c++11")   
+endif(CMAKE_COMPILER_IS_GNUCXX)
+add_subdirectory (src)
+add_subdirectory (ut)

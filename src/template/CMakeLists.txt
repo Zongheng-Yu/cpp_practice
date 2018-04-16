@@ -1,0 +1,1 @@
+add_library(template compare.cpp Blob.cpp)
