@@ -6,8 +6,12 @@
  */
 #include "gtest/gtest.h"
 #include "twoSum.hpp"
+#include <vector>
+
+using std::vector;
 
 TEST(twoSum, workingOk)
 {
-    ASSERT_GT(compare(1, 0), 0);
+    vector<int> ref{0, 1};
+    ASSERT_EQ(ref, twoSum(vector<int>{2, 7, 11, 15}, 9));
 }

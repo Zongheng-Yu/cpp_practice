@@ -2,7 +2,7 @@
 
 using std::vector;
 
-vector<int> twoSum(vector<int>& nums, int target)
+vector<int> twoSum(const vector<int>& nums, int target)
 {
     for (int i = 0; i < nums.size() - 1; i++)
     {
