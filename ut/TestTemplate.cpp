@@ -83,3 +83,9 @@ TEST(testCompareCharPointer, testLess)
     ASSERT_LT(compare(p1, p2), 0);
 }
 
+TEST(testBlob, testBlob)
+{
+    Blob<int> blob1;
+    ASSERT_EQ(0, blob.size())
+
+}

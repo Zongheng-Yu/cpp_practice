@@ -1,5 +1,5 @@
-include_directories("../../googletest/googletest/include/"
-                     "../src/template"
+include_directories("../../googletest/googletest/include/" 
+                     "../src/template" 
                      "../src/exercise")
                      
 link_directories("../../googletest/googlemock/gtest/")
