@@ -1,1 +1,8 @@
-add_library(template compare.cpp Blob.cpp)
+set(sources
+    compare.cpp
+)
+
+set(headers
+    Blob.hpp
+)
+add_library(template STATIC ${sources} ${headers})

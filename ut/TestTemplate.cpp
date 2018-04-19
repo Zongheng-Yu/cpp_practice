@@ -1,6 +1,7 @@
 #include <string>
 #include "gtest/gtest.h"
 #include "compare.hpp"
+#include "Blob.hpp"
 
 using std::string;
 
@@ -86,6 +87,6 @@ TEST(testCompareCharPointer, testLess)
 TEST(testBlob, testBlob)
 {
     Blob<int> blob1;
-    ASSERT_EQ(0, blob.size())
+    ASSERT_EQ(0, blob1.size());
 
 }
