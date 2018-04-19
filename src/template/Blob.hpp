@@ -25,3 +25,8 @@ class Blob {
         void check(size_type i, const std::string& msg) const;
         std::shared_ptr<std::vector<T>> data;
 };
+
+template <typename T>
+Blob<T>::Blob(): data(std::make_shared<std::vector<T>>())
+{
+}
