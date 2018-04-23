@@ -1,1 +1,1 @@
-add_library(exercise twoSum.cpp)
+add_library(exercise twoSum.cpp longestSubstring.cpp)

@@ -10,45 +10,23 @@ extern template int compare(const int&, const int&);
 extern template int compare(const char* const& p1, const char* const& p2);
 
 
-TEST(testCompareInt, testLarger)
+TEST(testCompareInt, workingOk)
 {
     ASSERT_GT(compare(1, 0), 0);
-}
-
-TEST(testCompareInt, testEqual)
-{
     ASSERT_EQ(compare(1, 1), 0);
-}
-
-TEST(testCompareInt, testLess)
-{
     ASSERT_LT(compare(1, 2), 0);
 }
 
-
-TEST(testCompareString, testLarger)
+TEST(testCompareString, workingOk)
 {
     ASSERT_GT(compare(string("def"), string("abc")), 0);
-}
-
-TEST(testCompareString, testEqual)
-{
     ASSERT_EQ(compare(string("abc"), string("abc")), 0);
-}
-
-TEST(testCompareString, testLess)
-{
     ASSERT_LT(compare(string("abc"), string("def")), 0);
 }
 
-
-TEST(testCompareCharArray, testLarger)
+TEST(testCompareCharArray, workingOk)
 {
     ASSERT_GT(compare("def", "abcd"), 0);
-}
-
-TEST(testCompareCharArray, testEqual)
-{
     /** can't compare same length of const char array.
         int comapre(const char[5], const char[5]) suites both
         template <typename T> int compare(const T& a, const T& b) and
@@ -56,31 +34,15 @@ TEST(testCompareCharArray, testEqual)
         with same priority
     **/
     //ASSERT_EQ(compare("abcd", "abcd"), 0);
-}
-
-TEST(testCompareCharArray, testLess)
-{
     ASSERT_LT(compare("abcd", "def"), 0);
 }
 
-
-TEST(testCompareCharPointer, testLarger)
+TEST(testCompareCharPointer, workingOk)
 {
     const char* p1 = "abc";
     const char* p2 = "def";
     ASSERT_GT(compare(p2, p1), 0);
-}
-
-TEST(testCompareCharPointer, testEqual)
-{
-    const char* p1 = "abc";
     ASSERT_EQ(compare(p1, p1), 0);
-}
-
-TEST(testCompareCharPointer, testLess)
-{
-    const char* p1 = "abc";
-    const char* p2 = "def";
     ASSERT_LT(compare(p1, p2), 0);
 }
 
@@ -88,5 +50,13 @@ TEST(testBlob, testBlob)
 {
     Blob<int> blob1;
     ASSERT_EQ(0, blob1.size());
-
+    ASSERT_THROW(blob1.pop_back();, std::out_of_range);
+    ASSERT_THROW(blob1.back();, std::out_of_range);
+    Blob<int> blob2{1, 2, 3};
+    ASSERT_EQ(3, blob2.size());
+    blob2.pop_back();
+    ASSERT_EQ(2, blob2.size());
+    ASSERT_EQ(2, blob2.back());
+    ASSERT_EQ(1, blob2[0]);
+    ASSERT_EQ(2, blob2[1]);
 }
