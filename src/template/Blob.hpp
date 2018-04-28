@@ -3,20 +3,23 @@
 #include <string>
 #include <memory>
 
+
+template <typename> class BlobPtr;
 template <typename> class Blob;
 template <typename T>
 bool operator==(const Blob<T>&, const Blob<T>&);
 
 template <typename T>
 class Blob {
-    friend bool operator==(const Blob<T>&, Blob<T>&);
+    friend class BlobPtr<T>;
+    friend bool operator==<T>(const Blob<T>&, const Blob<T>&);
     public:
         typedef T value_type;
         typedef typename std::vector<T>::size_type size_type;
         Blob();
         Blob(std::initializer_list<T> il);
         Blob(const Blob&) = default;
-        Blob& operator=(Blob&) = default;
+        Blob& operator=(const Blob&) = default;
         Blob(Blob&&) = default;
         Blob& operator=(Blob&&) = default;
         size_type size() const {return data->size();}

@@ -2,7 +2,7 @@ cmake_minimum_required (VERSION 2.6)
 project (gtest)
 
 if(CMAKE_COMPILER_IS_GNUCXX)
-    add_compile_options(-std=gnu++11)
+    add_compile_options(-std=gnu++11 -g)
     message(STATUS "optional:-std=gnu++11")   
 endif(CMAKE_COMPILER_IS_GNUCXX)
 set(gtest_root ${CMAKE_SOURCE_DIR}/external/googletest)
