@@ -66,8 +66,12 @@ TEST(testSort, giveStringVectorTestSortWorksOk)
 
 TEST(testSort, giveSortableClassTestSortWorksOk)
 {
-    std::vector<SortableClass> input{8, 9, 7, 5, 6, 3, 1, 2, 3, 4};
-    std::vector<SortableClass> ref{1, 2, 3, 3, 4, 5, 6, 7, 8, 9};
+    std::vector<SortableClass> input{SortableClass{5}, SortableClass{3},
+                                        SortableClass{1}, SortableClass{2},
+                                        SortableClass{3}, SortableClass{4}};
+    std::vector<SortableClass> ref{SortableClass{1}, SortableClass{2},
+                                    SortableClass{3}, SortableClass{3},
+                                    SortableClass{4}, SortableClass{5}};
     sort(input);
     ASSERT_EQ(ref, input);
 }

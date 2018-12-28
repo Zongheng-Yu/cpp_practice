@@ -7,7 +7,9 @@ add_executable(gtest_main.out
                TestMain.cpp
                TestTemplate.cpp
                TestExercise.cpp
-               TestSort.cpp)
+               TestSort.cpp
+               TestBasic.cpp
+               VisitorPatternDemo.cpp)
 
 target_link_libraries (gtest_main.out
                           "libgtest.a"

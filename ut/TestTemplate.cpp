@@ -2,6 +2,7 @@
 #include "gtest/gtest.h"
 #include "compare.hpp"
 #include "Blob.hpp"
+#include "BlobPtr.hpp"
 
 using std::string;
 

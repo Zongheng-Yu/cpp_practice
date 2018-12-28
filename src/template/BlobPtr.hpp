@@ -31,14 +31,14 @@ template <typename T> class BlobPtr
 };
 
 template <typename T>
-BlobPtr<T> BlobPtr<T>::operator++()
+BlobPtr<T>& BlobPtr<T>::operator++()
 {
     ++*this;
     return *this;
 }
 
 template <typename T>
-BlobPtr<T> BlobPtr<T>::operator++(int)
+BlobPtr<T>& BlobPtr<T>::operator++(int)
 {
     BlobPtr ret = *this;
     ++*this;
