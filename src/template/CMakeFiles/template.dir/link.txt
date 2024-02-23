@@ -1,2 +1,0 @@
-/usr/bin/ar.exe qc ../../build/libtemplate.a  CMakeFiles/template.dir/compare.cpp.o
-/usr/bin/ranlib.exe ../../build/libtemplate.a
