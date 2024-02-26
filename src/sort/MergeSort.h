@@ -44,12 +44,8 @@ template <typename T> void merge(std::vector<T>& arr, const std::size_t start, c
 
 template <typename T> void sort(std::vector<T>& arr, const std::size_t start, const std::size_t end)
 {
-    if (start + 1 == end)
+    if (start + 1 >= end)
     {
-        if (arr[start] > arr[end])
-        {
-            std::swap(arr[start], arr[end]);
-        }
         return;
     }
     sort(arr, start, (start + end)/2);
