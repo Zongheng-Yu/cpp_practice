@@ -30,7 +30,7 @@ template <typename T> void merge(std::vector<T>& arr, const std::size_t start, c
         result.emplace_back(std::move(arr[left]));
         left++;
     }
-    while (right < middle)
+    while (right < end)
     {
         result.emplace_back(std::move(arr[right]));
         right++;
